@@ -10,17 +10,17 @@ const actions: ActionTree<ProductsState, StateInterface> = {
         // a line to prevent linter errors
 
         try {
-            
+            commit('isLoadingProducts', true)
             const { data } = await productApi.get<Product[]>('')
 
-            console.log(data);
             commit('setProducts', data);
 
         } catch (error) {
             console.log(error);
-            
+            commit('setProducts', []);
         }finally{
-            commit('isLoadingProducts')
+            commit('isLoadingProducts',false);
+            
         }
         
 

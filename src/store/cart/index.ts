@@ -1,13 +1,13 @@
 import type { Module } from 'vuex';
 import type { StateInterface } from '../index';
 
-import  state,  { type ExampleStateInterface } from './state';
+import  state,  { type CartState } from './state';
 import actions from './actions';
 import getters from './getters';
 import mutations from './mutations';
 
 
-const exampleModule: Module<ExampleStateInterface, StateInterface> = {
+const cartModule: Module<CartState, StateInterface> = {
     namespaced: true,
     actions,
     getters,
@@ -16,4 +16,4 @@ const exampleModule: Module<ExampleStateInterface, StateInterface> = {
 }
 
 
-export default exampleModule;
+export default cartModule;

@@ -1,11 +1,16 @@
+import type { Product } from "@/interfaces/product";
 
-export interface ExampleStateInterface {
-    prop: boolean;
+export interface CartState {
+    cart: Product[];
+    quantity: number;
+    total: number;
 }
 
-function state(): ExampleStateInterface {
+function state(): CartState {
     return {
-        prop: true,
+        cart: [],
+        quantity: 0,
+        total: 0
     }
 }
 

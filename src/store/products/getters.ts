@@ -17,7 +17,7 @@ const getters: GetterTree<ProductsState, StateInterface> = {
         }  
     },
     isLoadingProducts(  state: ProductsState  ) {
-        // return true;
+
         return state.isLoading
     }
 }

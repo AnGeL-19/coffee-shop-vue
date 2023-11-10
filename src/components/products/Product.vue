@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useCart } from '../../composable/useCart';
 
+
+  const { addProduct } = useCart()
   
   const { product } = defineProps({
     product: {
@@ -20,6 +23,15 @@
         :alt="product.name"
       />
       <span v-show="product.popular" class="popular" >Popular</span>
+      <button 
+      @click="addProduct(product)"
+      class="position-absolute top-0 end-0 bg-white opacity-25 p-1 rounded-circle border-0 d-flex justify-content-center align-content-center">
+         
+        <span class="material-symbols-outlined">
+            shopping_cart
+        </span>
+       
+      </button>
     </div>
     <div class="d-flex flex-column gap-2">
       <div class="d-flex justify-content-between align-items-center">

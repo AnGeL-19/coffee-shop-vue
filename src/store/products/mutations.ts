@@ -7,8 +7,8 @@ const mutation: MutationTree<ProductsState> = {
         // a line to prevent linter errors
         state.products = payload
     },
-    isLoadingProducts(state: ProductsState) {
-        state.isLoading = !state.isLoading
+    isLoadingProducts(state: ProductsState, payload: boolean) {
+        state.isLoading = payload
     }
 }
 

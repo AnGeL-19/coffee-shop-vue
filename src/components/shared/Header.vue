@@ -2,7 +2,7 @@
   <header class="w-100 d-flex justify-content-between px-3 py-2">
     <div>
         <RouterLink to="/">
-            <img alt="Vue logo" class="logo" src="@/assets/vector.svg" width="50" height="50" />
+            <img alt="Vue logo"  src="@/assets/vector.svg" width="50" height="50" />
         </RouterLink>     
     </div>
  

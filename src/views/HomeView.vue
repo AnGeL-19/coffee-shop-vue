@@ -5,7 +5,7 @@ import { useProducts } from '@/composable/useProducts'
 import type { Product as IProduct } from "../interfaces/product";
 
   const { currentTab, isLoadingProducts, productsByTab: products } = useProducts()
-
+  
   const onActive = (value:string) => {
     return value === currentTab.value ? 'btn btn-filter-active' : 'btn btn-filter' 
   }
@@ -21,7 +21,7 @@ import type { Product as IProduct } from "../interfaces/product";
         alt="coffee">
     </div>
     
-    <div class="container-sp d-flex justify-content-center ">
+    <div class="container-sp  d-flex justify-content-center align-items-center">
       <div class="section-sp py-4 px-5 z-1">
         <div class="d-flex flex-column justify-content-center align-items-center">
 
@@ -67,6 +67,8 @@ import type { Product as IProduct } from "../interfaces/product";
       </div>
    </div>
 
+   
+
   </main>
 </template>
 
@@ -75,7 +77,7 @@ import type { Product as IProduct } from "../interfaces/product";
 
 
 .main-container{
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .bg-image{
@@ -88,7 +90,8 @@ import type { Product as IProduct } from "../interfaces/product";
 
 .image{
   width: 100%;
-  min-height: 270px;
+  min-height: 300px;
+  max-height: 300px;
   object-fit: cover;
 }
 
@@ -98,9 +101,9 @@ import type { Product as IProduct } from "../interfaces/product";
 }
 
 .container-sp{
-  position: absolute;
+  /* position: absolute;
   top: 210px;
-  left: 0;
+  left: 0; */
   width: 100%;
   min-height: 100vh;
  
@@ -110,7 +113,7 @@ import type { Product as IProduct } from "../interfaces/product";
   border-radius: 15px;
   max-width: 60%;
   max-width: 80%;
-  margin-bottom: 50px;
+  margin-top: 150px;
 }
 
 .section-container{
