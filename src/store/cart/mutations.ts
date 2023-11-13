@@ -30,8 +30,19 @@ const mutation: MutationTree<CartState> = {
     decreaseQuantityProduct( state: CartState, { product, quantity } : {product: Product ,quantity: number}){
 
         state.quantity = state.quantity - quantity;
-        state.total -= Number( (product.price.slice(1,product.price.length)).toFixed(2) );
+        state.total -= Number( (product.price.slice(1,product.price.length)) );
+    },
+    payProducts( state: CartState ){
+
+        state.cart = [];
+        state.total = 0;
+        state.quantity = 0;
+
+    },
+    deleteProduct(state: CartState, payload: Product[]){
+        state.cart = payload;
     }
+    
 }
 
 

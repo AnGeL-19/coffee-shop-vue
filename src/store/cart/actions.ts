@@ -23,6 +23,23 @@ const actions: ActionTree<CartState, StateInterface> = {
         const cart: Product[] = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : []
         
         commit('addAllProductsToCart', cart);
+    },
+    payProducts({ commit } ) {
+
+        localStorage.removeItem('cart')
+        commit('payProducts')
+
+    },
+    deleteProduct({ commit },  payload: Product ) {
+
+        const cart: Product[] = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : []
+
+        const products = cart.filter( p => p.id !== payload.id)
+
+        localStorage.setItem('cart', JSON.stringify(products));
+
+        commit('deleteProduct',products)
+
     }
 }
 

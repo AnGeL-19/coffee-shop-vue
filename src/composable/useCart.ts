@@ -18,6 +18,8 @@ export const useCart = () => {
     const total = computed( () => store.getters['cart/getTotal'] )
     const increaseProduct = (product: Product, quantity: number) => store.commit('cart/increaseQuantityProduct', {  product, quantity })
     const decreaseProduct = (product: Product, quantity: number) => store.commit('cart/decreaseQuantityProduct', {  product, quantity })
+    const payProducts = () => store.dispatch('cart/payProducts')
+    const deleteProduct = (product: Product) => store.dispatch('cart/deleteProduct', product)
 
     return{
         addProduct,
@@ -25,7 +27,9 @@ export const useCart = () => {
         quantity,
         total,
         increaseProduct,
-        decreaseProduct
+        decreaseProduct,
+        payProducts,
+        deleteProduct
     }
 
 }

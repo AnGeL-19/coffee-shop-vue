@@ -5,7 +5,7 @@ import { useCart } from '../composable/useCart'
 
 
 
-const { cart, total, quantity } = useCart()
+const { cart, total, quantity, payProducts } = useCart()
 
 
 </script>
@@ -35,6 +35,13 @@ const { cart, total, quantity } = useCart()
             <span class="fs-3">${{ total }}</span>
           </div>
         </div>
+        <button 
+          @click="payProducts"
+          :class="quantity !== 0 ? 'btn btn-success': 'btn btn-disabled'"
+          :disabled="quantity==0"
+        >
+          Pay
+        </button>
       </section>
 
     </div>

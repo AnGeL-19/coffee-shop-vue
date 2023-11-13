@@ -24,6 +24,7 @@ import { useCart } from '../../composable/useCart';
       />
       <span v-show="product.popular" class="popular" >Popular</span>
       <button 
+      v-if="product.available"
       @click="addProduct(product)"
       class="position-absolute top-0 end-0 bg-white opacity-25 p-1 rounded-circle border-0 d-flex justify-content-center align-content-center">
          
@@ -57,7 +58,8 @@ import { useCart } from '../../composable/useCart';
               <span class="txt-card votes">{{ product.votes != 0 ?  `( ${product.votes} votes )` : 'No rating' }}</span>
             </div> 
         </div> 
-        <div v-show="!product.available">
+        <div 
+        v-show="!product.available">
           <span class="label">Sould out</span>
         </div>  
       </div>
